@@ -25,7 +25,7 @@ export function App() {
    if (error) return <p>A network error has occurred</p>;
    return (
       <>
-         <Outlet context={{ productData }} />
+         <Outlet context={{ productData, setProductData }} />
       </>
    );
 }

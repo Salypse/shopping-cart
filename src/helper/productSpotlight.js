@@ -1,0 +1,19 @@
+export function decreaseIndex(index, length) {
+   let startIndex = index;
+
+   if (startIndex - 1 < 0) {
+      return length - 1;
+   } else {
+      return startIndex - 1;
+   }
+}
+
+export function increaseIndex(index, length) {
+   let startIndex = index;
+
+   if (startIndex >= length - 1) {
+      return 0;
+   } else {
+      return startIndex + 1;
+   }
+}

@@ -1,7 +1,5 @@
 import { Link, useOutletContext } from "react-router";
-
-/* eslint-disable no-unused-vars */
-/* Above line used to stop unused var error for unused productData */
+import { ProductSpotlight } from "./ProductSpotlight";
 
 export function Homepage() {
    const { productData } = useOutletContext();
@@ -10,6 +8,10 @@ export function Homepage() {
       <>
          <Link to="/shop">Shop</Link>
          <Link to="/cart">Cart</Link>
+
+         <section className="product-spotlight">
+            <ProductSpotlight productData={productData} />
+         </section>
       </>
    );
 }

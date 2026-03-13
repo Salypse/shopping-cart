@@ -9,9 +9,7 @@ export function Homepage() {
          <Link to="/shop">Shop</Link>
          <Link to="/cart">Cart</Link>
 
-         <section className="product-spotlight">
-            <ProductSpotlight productData={productData} />
-         </section>
+         <ProductSpotlight productData={productData} />
       </>
    );
 }

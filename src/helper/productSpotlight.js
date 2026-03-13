@@ -17,3 +17,14 @@ export function increaseIndex(index, length) {
       return startIndex + 1;
    }
 }
+
+export function getRandomProducts(data) {
+   const dataCopy = [...data];
+   const randomItems = [];
+
+   for (let i = 0; i < 5; i++) {
+      const randomIndex = Math.floor(Math.random() * dataCopy.length);
+      randomItems.push(dataCopy.splice(randomIndex, 1)[0]);
+   }
+   return randomItems;
+}

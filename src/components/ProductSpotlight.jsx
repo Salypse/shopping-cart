@@ -16,30 +16,33 @@ export function ProductSpotlight(props) {
    }, [productData]);
 
    return (
-      <section className="product-spotlight">
-         <button
-            onClick={() =>
-               setCurrentIndex(
-                  decreaseIndex(currentIndex, spotlightProducts.length),
-               )
-            }
-         >
-            {"<"}
-         </button>
+      <section className="spotlight">
+         <h2>FEATURED</h2>
+         <div className="product-spotlight">
+            <button
+               onClick={() =>
+                  setCurrentIndex(
+                     decreaseIndex(currentIndex, spotlightProducts.length),
+                  )
+               }
+            >
+               {"<"}
+            </button>
 
-         {spotlightProducts.length && (
-            <SpotlightCard data={spotlightProducts[currentIndex]} />
-         )}
+            {spotlightProducts.length && (
+               <SpotlightCard data={spotlightProducts[currentIndex]} />
+            )}
 
-         <button
-            onClick={() =>
-               setCurrentIndex(
-                  increaseIndex(currentIndex, spotlightProducts.length),
-               )
-            }
-         >
-            {">"}
-         </button>
+            <button
+               onClick={() =>
+                  setCurrentIndex(
+                     increaseIndex(currentIndex, spotlightProducts.length),
+                  )
+               }
+            >
+               {">"}
+            </button>
+         </div>
       </section>
    );
 }

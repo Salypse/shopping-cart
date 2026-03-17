@@ -11,6 +11,7 @@ export function addToCart(event, data, cartData, setCartData) {
                quantity: quantity,
             };
          }
+         return product;
       });
       setCartData(updatedCartData);
    }

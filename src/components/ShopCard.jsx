@@ -1,5 +1,7 @@
+import { addToCart } from "../helper/addToCart";
+
 export function ShopCard(props) {
-   const { data } = props;
+   const { data, cartData, setCartData } = props;
 
    return (
       <div>
@@ -7,7 +9,10 @@ export function ShopCard(props) {
             <img src={data.image} />
             <p>{data.title}</p>
          </div>
-         <form className="product-quantity">
+         <form
+            className="product-quantity"
+            onSubmit={(event) => addToCart(event, data, cartData, setCartData)}
+         >
             <input type="number" name="quantity" min={0} required></input>
             <button type="submit">Add to Cart</button>
          </form>

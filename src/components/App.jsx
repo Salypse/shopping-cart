@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 
 export function App() {
    const [productData, setProductData] = useState([]);
+   const [cartData, setCartData] = useState([]);
    const [error, setError] = useState(undefined);
    const [loading, setLoading] = useState(true);
 
@@ -25,7 +26,9 @@ export function App() {
    if (error) return <p>A network error has occurred</p>;
    return (
       <>
-         <Outlet context={{ productData, setProductData }} />
+         <Outlet
+            context={{ productData, setProductData, cartData, setCartData }}
+         />
       </>
    );
 }

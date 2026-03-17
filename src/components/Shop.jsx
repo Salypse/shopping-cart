@@ -3,7 +3,7 @@ import { ShopCard } from "./ShopCard";
 import { Filter } from "./Filter";
 import { useState } from "react";
 export function Shop() {
-   const { productData } = useOutletContext();
+   const { productData, cartData, setCartData } = useOutletContext();
    const [filteredItems, setFilteredItems] = useState(productData);
 
    return (
@@ -19,7 +19,11 @@ export function Shop() {
             <ul>
                {filteredItems.map((product) => (
                   <li key={product.id}>
-                     <ShopCard data={product} />
+                     <ShopCard
+                        data={product}
+                        cartData={cartData}
+                        setCartData={setCartData}
+                     />
                   </li>
                ))}
             </ul>

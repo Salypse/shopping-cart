@@ -4,7 +4,7 @@ import { Link, useOutletContext } from "react-router";
 /* Above line used to stop unused var error for unused productData */
 
 export function Cart() {
-   const { productData } = useOutletContext;
+   const { productData, cartData } = useOutletContext();
 
    return (
       <>

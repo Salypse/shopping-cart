@@ -7,9 +7,6 @@ export function Homepage() {
 
    return (
       <>
-         <Link to="/shop">Shop</Link>
-         <Link to="/cart">Cart</Link>
-
          <ProductSpotlight productData={productData} />
          <Link to="/shop">SHOP NOW!</Link>
          <BestSellers productData={productData} />

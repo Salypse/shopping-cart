@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 import { ShopCard } from "./ShopCard";
 import { Filter } from "./Filter";
 import { useState } from "react";
@@ -8,7 +8,6 @@ export function Shop() {
 
    return (
       <>
-         <Link to="/">Home</Link>
          <aside className="filter">
             <Filter
                productData={productData}

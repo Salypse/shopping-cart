@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router";
+import { NavBar } from "./NavBar";
 
 export function App() {
    const [productData, setProductData] = useState([]);
@@ -26,6 +27,7 @@ export function App() {
    if (error) return <p>A network error has occurred</p>;
    return (
       <>
+         <NavBar cartData={cartData} />
          <Outlet
             context={{ productData, setProductData, cartData, setCartData }}
          />

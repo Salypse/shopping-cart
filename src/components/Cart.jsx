@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from "react-router";
+import { useOutletContext } from "react-router";
 import { ProductRow } from "./ProductRow";
 import { CartSummary } from "./CartSummary";
 
@@ -7,7 +7,6 @@ export function Cart() {
 
    return (
       <>
-         <Link to="/">Home</Link>
          <section className="cart-products">
             <ul>
                {cartData.map((product) => (

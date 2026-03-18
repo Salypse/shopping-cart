@@ -2,7 +2,8 @@ import { Link, useOutletContext } from "react-router";
 import { ProductRow } from "./ProductRow";
 
 export function Cart() {
-   const { cartData } = useOutletContext();
+   const { cartData, setCartData } = useOutletContext();
+
    return (
       <>
          <Link to="/">Home</Link>
@@ -10,7 +11,10 @@ export function Cart() {
             <ul>
                {cartData.map((product) => (
                   <li>
-                     <ProductRow productData={product} />
+                     <ProductRow
+                        productData={product}
+                        setCartData={setCartData}
+                     />
                   </li>
                ))}
             </ul>

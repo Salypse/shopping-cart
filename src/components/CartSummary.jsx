@@ -29,6 +29,9 @@ export function CartSummary(props) {
                ? (itemPrice + shippingPrice + taxPrice).toFixed(2)
                : 0}
          </strong>
+         <a target="_blank" href="https://www.youtube.com/watch?v=QDia3e12czc">
+            Checkout
+         </a>
       </div>
    );
 }

@@ -2,6 +2,7 @@ import { addToCart } from "../helper/addToCart";
 
 export function ShopCard(props) {
    const { data, cartData, setCartData } = props;
+   const cartProduct = cartData.find((product) => product.id === data.id);
 
    return (
       <div>
@@ -13,7 +14,13 @@ export function ShopCard(props) {
             className="product-quantity"
             onSubmit={(event) => addToCart(event, data, cartData, setCartData)}
          >
-            <input type="number" name="quantity" min={1} required></input>
+            <input
+               type="number"
+               name="quantity"
+               min={1}
+               defaultValue={cartProduct ? cartProduct.quantity : ""}
+               required
+            ></input>
             <button type="submit">Add to Cart</button>
          </form>
       </div>

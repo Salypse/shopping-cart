@@ -15,14 +15,26 @@ export function ProductSpotlight(props) {
       setSpotlightProducts(getRandomProducts(productData));
    }, [productData]);
 
+   useEffect(() => {
+      if (!spotlightProducts.length) return;
+
+      const interval = setInterval(() => {
+         setCurrentIndex((prevIndex) =>
+            increaseIndex(prevIndex, spotlightProducts.length),
+         );
+      }, 5000);
+
+      return () => clearInterval(interval);
+   }, [spotlightProducts]);
+
    return (
       <section className="spotlight">
          <h2>FEATURED</h2>
          <div className="product-spotlight">
             <button
                onClick={() =>
-                  setCurrentIndex(
-                     decreaseIndex(currentIndex, spotlightProducts.length),
+                  setCurrentIndex((prevIndex) =>
+                     decreaseIndex(prevIndex, spotlightProducts.length),
                   )
                }
             >
@@ -35,8 +47,8 @@ export function ProductSpotlight(props) {
 
             <button
                onClick={() =>
-                  setCurrentIndex(
-                     increaseIndex(currentIndex, spotlightProducts.length),
+                  setCurrentIndex((prevIndex) =>
+                     increaseIndex(prevIndex, spotlightProducts.length),
                   )
                }
             >

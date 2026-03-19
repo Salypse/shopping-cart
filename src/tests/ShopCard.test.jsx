@@ -12,8 +12,10 @@ describe("ShopCard", () => {
       image: "apple.png",
    };
 
+   const cartData = [];
+
    it("renders a shop card with the correct data", () => {
-      (render(<ShopCard data={testProduct} />), expect(screen.get));
+      render(<ShopCard data={testProduct} cartData={cartData} />);
 
       expect(screen.getByText("apple")).toBeInTheDocument();
       expect(screen.getByRole("img")).toHaveAttribute("src", "apple.png");

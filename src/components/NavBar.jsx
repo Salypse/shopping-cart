@@ -1,4 +1,6 @@
 import { Link } from "react-router";
+import styles from "../styles/navBar.module.css";
+import cartIcon from "../assets/cart-icon.svg";
 
 export function NavBar(props) {
    const { cartData } = props;
@@ -8,13 +10,21 @@ export function NavBar(props) {
    }, 0);
 
    return (
-      <nav>
+      <nav className={styles.nav}>
          <strong>Shopping</strong>
-         <Link to="/">Home</Link>
-         <Link to="/shop">Shop</Link>
-         <div className="cart-nav">
-            <Link to="/cart">Cart</Link>
-            {cartQuantity > 0 && <p>{cartQuantity}</p>}
+         <div className={styles["page-nav"]}>
+            <Link to="/" className={styles["page-link"]}>
+               Home
+            </Link>
+            <Link to="/shop" className={styles["page-link"]}>
+               Shop
+            </Link>
+         </div>
+         <div className={styles["cart-nav"]}>
+            <Link to="/cart" className={styles["page-link"]}>
+               <img src={cartIcon} className={styles["cart-icon"]} />
+            </Link>
+            {cartQuantity > 0 && <p>({cartQuantity})</p>}
          </div>
       </nav>
    );

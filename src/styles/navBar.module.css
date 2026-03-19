@@ -1,0 +1,46 @@
+nav {
+   height: 6vh;
+   padding: 1vw;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   background-color: var(--dark-blue);
+   border-radius: 0 0 5% 5%;
+}
+
+nav strong {
+   font-size: clamp(1.3rem, 5vw, 2rem);
+   color: var(--white);
+}
+
+.page-nav {
+   display: flex;
+   gap: 3vw;
+}
+
+.page-link {
+   color: var(--white);
+   font-size: clamp(1rem, 4.5vw, 1.6rem);
+
+   text-decoration-color: var(--light-blue);
+   text-underline-offset: 5px;
+}
+
+.cart-nav {
+   color: var(--light-blue);
+   font-size: clamp(1rem, 2vw, 1.4rem);
+
+   display: flex;
+   align-items: center;
+   gap: 1vw;
+}
+
+.cart-icon {
+   width: 6vw;
+   height: auto;
+
+   display: flex;
+   align-self: center;
+}

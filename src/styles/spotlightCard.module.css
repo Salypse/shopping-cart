@@ -1,0 +1,48 @@
+.spotlight-product {
+   display: flex;
+   justify-self: center;
+   flex-direction: column;
+
+   border-radius: 1vw;
+   background-color: #ffffff;
+
+   height: auto;
+   width: 90%;
+   margin: 1vw;
+}
+
+.image-wrapper {
+   height: 35vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.spotlight-image {
+   width: 50%;
+   height: auto;
+   object-fit: cover;
+}
+
+.spotlight-info {
+   display: flex;
+   flex-direction: column;
+   align-self: center;
+   text-align: center;
+   gap: 1vh;
+
+   width: 95%;
+   height: 15vh;
+   border-top: 1vh solid var(--white);
+   padding: 1vh;
+}
+
+.spotlight-info strong {
+   font-size: clamp(1.1rem, 4.2vw, 1.5vw);
+}
+
+.spotlight-price {
+   font-weight: lighter;
+   text-decoration: underline;
+   text-underline-offset: 2px;
+}

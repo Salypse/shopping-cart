@@ -1,0 +1,44 @@
+.best-sellers {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-self: center;
+   justify-content: center;
+
+   padding: 2vh 1vw;
+   width: 90%;
+}
+
+.products {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   gap: 3vh;
+
+   margin-top: 1.5vh;
+}
+
+.product-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   padding: 2vw 1vw;
+   background-color: white;
+   border-radius: 5%;
+}
+
+.product-image {
+   width: 60%;
+   height: auto;
+}
+
+.product-card p {
+   margin-top: 1vh;
+   padding: 2vw;
+   width: 85%;
+
+   font-weight: bold;
+   text-align: center;
+   border-top: 0.7vh solid var(--white);
+}

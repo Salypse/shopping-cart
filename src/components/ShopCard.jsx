@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { addToCart } from "../helper/addToCart";
 import styles from "../styles/shopCard.module.css";
 
 export function ShopCard(props) {
    const { data, cartData, setCartData } = props;
-   const cartProduct = cartData.find((product) => product.id === data.id);
+   const [quantity, setQuantity] = useState(0);
 
    return (
       <div className={styles["shop-card"]}>
@@ -14,16 +15,36 @@ export function ShopCard(props) {
             <strong>{data.title}</strong>
          </div>
          <form
-            className={styles.quantity}
+            className={styles["cart-options"]}
             onSubmit={(event) => addToCart(event, data, cartData, setCartData)}
          >
-            <input
-               type="number"
-               name="quantity"
-               min={1}
-               defaultValue={cartProduct ? cartProduct.quantity : ""}
-               required
-            ></input>
+            <div className={styles.quantity}>
+               <button
+                  type="button"
+                  className={styles["quantity-btn"]}
+                  onClick={() => {
+                     setQuantity((prev) => (prev - 1 > 0 ? prev - 1 : 0));
+                  }}
+               >
+                  -
+               </button>
+               <input
+                  type="number"
+                  name="quantity"
+                  min={1}
+                  defaultValue={quantity > 0 ? quantity : ""}
+                  required
+               ></input>
+               <button
+                  type="button"
+                  className={styles["quantity-btn"]}
+                  onClick={() => {
+                     setQuantity((prev) => prev + 1);
+                  }}
+               >
+                  +
+               </button>
+            </div>
             <button type="submit" className={styles.btn}>
                Add to Cart
             </button>

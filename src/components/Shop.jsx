@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router";
 import { ShopCard } from "./ShopCard";
 import { Filter } from "./Filter";
 import { useState } from "react";
+
 export function Shop() {
    const { productData, cartData, setCartData } = useOutletContext();
    const [filteredItems, setFilteredItems] = useState(productData);

@@ -1,0 +1,60 @@
+.shop-card {
+   background-color: white;
+   width: 75%;
+   padding: 1vw;
+   text-align: center;
+}
+
+.info {
+   padding-bottom: 1.5vh;
+}
+
+.shop-image {
+   width: 40%;
+   height: auto;
+}
+
+.image-wrapper {
+   height: 30vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.quantity {
+   display: flex;
+   align-items: center;
+   justify-self: center;
+   justify-content: center;
+   gap: 2vw;
+   width: 90%;
+
+   margin-top: 1vw;
+   padding: 3vw;
+   border-top: 0.75vh solid var(--white);
+}
+
+.shop-card input {
+   width: 20%;
+   text-align: center;
+   font-size: clamp(1.2rem, 5vw, 2rem);
+   border-color: var(--dark-blue);
+   border-radius: 2vw;
+   border-style: solid;
+   padding: 0.6vw 1vw;
+}
+
+.shop-card input:focus {
+   outline: none;
+   box-shadow: 0 0 5px 3px var(--light-blue);
+}
+
+.btn {
+   padding: 1vw 1.5vw;
+   background: var(--light-blue);
+   border-color: var(--dark-blue);
+   border-style: solid;
+   border-radius: 2vw;
+   font-size: clamp(1.2rem, 5vw, 2rem);
+   color: var(--white);
+}

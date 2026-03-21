@@ -1,0 +1,14 @@
+.shop {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+   gap: 2vh;
+
+   margin-top: 2vh;
+   padding-bottom: 2vh;
+}
+
+.shop-product {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}

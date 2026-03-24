@@ -1,0 +1,73 @@
+.icon {
+   position: relative;
+   left: 2vw;
+   top: 2vw;
+
+   border: none;
+   background: transparent;
+}
+
+.icon img {
+   width: 8vw;
+   height: auto;
+}
+
+.icon:hover,
+.icon:focus-visible {
+   transform: scale(1.2);
+}
+
+.filter {
+   position: fixed;
+   background-color: #ffffff;
+
+   width: 100%;
+   height: 100%;
+}
+
+.form {
+   padding: 5vw;
+}
+
+.form legend {
+   font-size: clamp(1.3rem, 5.5vw, 2rem);
+   font-weight: bold;
+   text-decoration: underline;
+   text-underline-offset: 1px;
+}
+
+.form-options {
+   list-style-type: none;
+   margin-top: 1vh;
+
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   gap: 1vh;
+
+   font-size: clamp(1rem, 4vw, 1.6rem);
+}
+
+.form-options li div {
+   display: flex;
+   gap: 1vw;
+}
+
+.btn {
+   font-size: clamp(1.1rem, 4.5vw, 1.8rem);
+   color: var(--white);
+   background-color: var(--light-blue);
+   padding: 0.8vw 1.3vw;
+   border-color: var(--dark-blue);
+   border-style: solid;
+   border-radius: 2vw;
+
+   transition: transform 0.1s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+   background-color: var(--dark-blue);
+   transform: scale(1.1);
+   outline: none;
+}

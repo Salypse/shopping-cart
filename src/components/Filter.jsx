@@ -4,13 +4,15 @@ import styles from "../styles/filter.module.css";
 import closeIcon from "../assets/close-icon.svg";
 
 export function Filter(props) {
-   const { productData, setFilteredItems, setIsActive } = props;
+   const { productData, setFilteredItems, isActive, setIsActive } = props;
    const categories = getCategories(productData);
    const formRef = useRef(null);
 
    return (
       <>
-         <div className={styles["filter"]}>
+         <div
+            className={`${styles["filter"]} ${isActive ? styles["active"] : ""}`}
+         >
             <button
                className={styles["icon"]}
                onClick={() => setIsActive((prev) => !prev)}
@@ -27,11 +29,12 @@ export function Filter(props) {
                               type="radio"
                               id={`filter-${category}`}
                               name={`filter-option`}
-                              onClick={() =>
+                              onClick={() => [
                                  setFilteredItems(
                                     filterData(productData, category),
-                                 )
-                              }
+                                 ),
+                                 setIsActive((prev) => !prev),
+                              ]}
                            ></input>
                            <label htmlFor={`filter-${category}`}>
                               {category.charAt(0).toUpperCase() +
@@ -45,6 +48,7 @@ export function Filter(props) {
                      onClick={(event) => [
                         event.preventDefault(),
                         setFilteredItems(productData),
+                        setIsActive((prev) => !prev),
                         formRef.current.reset(),
                      ]}
                   >

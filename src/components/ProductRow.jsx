@@ -3,30 +3,46 @@ import {
    increaseQuantity,
    decreaseQuantity,
 } from "../helper/QuantityChange";
+import styles from "../styles/productRow.module.css";
 
 export function ProductRow({ productData, setCartData }) {
    return (
-      <div className="product-row">
-         <img src={productData.image} />
-         <h3>{productData.title}</h3>
-         <strong>${productData.price}</strong>
-         <p>Quantity: {productData.quantity}</p>
-         <div className="product-quantity">
-            <div className="quantity">
+      <div className={styles["product-row"]}>
+         <div className={styles["img-wrapper"]}>
+            <img src={productData.image} className={styles["img"]} />
+         </div>
+         <div className={styles["product-wrapper"]}>
+            <div className={styles["product-data"]}>
+               <strong>{productData.title}</strong>
+               <strong>${productData.price}</strong>
+            </div>
+            <div className={styles["product-quantity"]}>
+               <p>Quantity: {productData.quantity}</p>
+               <div>
+                  <button
+                     className={styles["btn"]}
+                     onClick={() =>
+                        increaseQuantity(productData.id, setCartData)
+                     }
+                  >
+                     ⬆
+                  </button>
+                  <button
+                     className={styles["btn"]}
+                     onClick={() =>
+                        decreaseQuantity(productData.id, setCartData)
+                     }
+                  >
+                     ⬇
+                  </button>
+               </div>
                <button
-                  onClick={() => increaseQuantity(productData.id, setCartData)}
+                  className={`${styles["delete"]} ${styles["btn"]}`}
+                  onClick={() => removeProduct(productData.id, setCartData)}
                >
-                  ⬆
-               </button>
-               <button
-                  onClick={() => decreaseQuantity(productData.id, setCartData)}
-               >
-                  ⬇
+                  Delete
                </button>
             </div>
-            <button onClick={() => removeProduct(productData.id, setCartData)}>
-               Delete
-            </button>
          </div>
       </div>
    );

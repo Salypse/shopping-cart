@@ -1,0 +1,79 @@
+.product-row {
+   display: flex;
+   justify-self: center;
+   flex-direction: row;
+   width: 95%;
+
+   font-size: clamp(1rem, 3.5vw, 1.4rem);
+}
+
+li:not(:last-child) .product-row {
+   border-bottom: 0.3vh solid rgba(0, 0, 0, 0.2);
+}
+
+.product-row strong {
+   font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.img-wrapper {
+   width: 20vw;
+   height: 20vw;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+}
+
+.img {
+   width: 60%;
+   height: auto;
+}
+
+.product-wrapper {
+   display: flex;
+   flex-direction: column;
+   padding: 1vw;
+   gap: 1vh;
+}
+
+.product-data {
+   display: flex;
+   gap: 1vh;
+}
+
+.product-quantity {
+   display: flex;
+   align-items: center;
+   gap: 2vw;
+}
+
+.product-quantity > button {
+   font-size: clamp(1rem, 3vw, 1.8rem);
+   color: var(--white);
+   border: 0.7vw solid var(--dark-blue);
+   border-radius: 2vw;
+   background-color: var(--light-blue);
+   padding: 0.8vw 1vw;
+}
+
+.product-quantity > button:hover,
+.product-quantity > button:focus-visible {
+   background-color: var(--dark-blue);
+   color: var(--white);
+}
+
+.btn {
+   border: none;
+   background-color: transparent;
+   color: var(--light-blue);
+   font-size: clamp(1.3rem, 4vw, 2rem);
+   transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus-visible {
+   outline: none;
+   transform: scale(1.2);
+   color: var(--dark-blue);
+}

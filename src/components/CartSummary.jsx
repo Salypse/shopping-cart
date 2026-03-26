@@ -1,3 +1,5 @@
+import styles from "../styles/cartSummary.module.css";
+
 export function CartSummary(props) {
    const { cartData } = props;
 
@@ -13,25 +15,33 @@ export function CartSummary(props) {
    );
 
    return (
-      <div className="cart-summary">
+      <div className={styles["cart-summary"]}>
          <h3>Order Summary</h3>
-         <p>Subtotal: ${itemPrice}</p>
-         {itemPrice > 0 && (
-            <>
-               <p>Sales Tax: ${taxPrice}</p>
-               <p>Shipping Cost: ${shippingPrice}</p>
-            </>
-         )}
-
-         <strong>
-            Order Total: $
-            {itemPrice > 0
-               ? (itemPrice + shippingPrice + taxPrice).toFixed(2)
-               : 0}
-         </strong>
-         <a target="_blank" href="https://www.youtube.com/watch?v=QDia3e12czc">
-            Checkout
-         </a>
+         <div className={styles["price-info"]}>
+            <p>Subtotal: ${itemPrice}</p>
+            {itemPrice > 0 && (
+               <>
+                  <p>Sales Tax: ${taxPrice}</p>
+                  <p>Shipping Cost: ${shippingPrice}</p>
+               </>
+            )}
+            {cartData.length > 0 && (
+               <div className={styles["checkout-info"]}>
+                  <strong>
+                     Order Total: $
+                     {itemPrice > 0
+                        ? (itemPrice + shippingPrice + taxPrice).toFixed(2)
+                        : 0}
+                  </strong>
+                  <a
+                     target="_blank"
+                     href="https://www.youtube.com/watch?v=QDia3e12czc"
+                  >
+                     Checkout
+                  </a>
+               </div>
+            )}
+         </div>
       </div>
    );
 }

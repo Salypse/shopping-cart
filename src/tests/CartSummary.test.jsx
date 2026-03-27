@@ -18,7 +18,7 @@ describe("Cart Summary", () => {
       render(<CartSummary cartData={mockCartData} />);
 
       expect(screen.getByText("Subtotal: $0")).toBeInTheDocument();
-      expect(screen.getByText("Order Total: $0")).toBeInTheDocument();
+      expect(screen.queryByText("Order Total: $0")).not.toBeInTheDocument();
       expect(screen.queryByText("Sale's tax: $9.99")).not.toBeInTheDocument();
       expect(
          screen.queryByText("Shipping Cost: $4.99"),

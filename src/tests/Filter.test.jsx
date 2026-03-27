@@ -6,6 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 describe("Filter", () => {
    const setFilteredItems = vi.fn();
+   const setIsActive = vi.fn();
 
    const testProducts = [
       {
@@ -31,6 +32,7 @@ describe("Filter", () => {
          <Filter
             productData={testProducts}
             setFilteredItems={setFilteredItems}
+            setIsActive={setIsActive}
          />,
       );
    }

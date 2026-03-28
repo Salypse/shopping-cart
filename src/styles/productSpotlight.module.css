@@ -1,4 +1,5 @@
 .product-spotlight {
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -12,18 +13,18 @@
    color: var(--black);
    font-size: 2.5rem;
    background-color: transparent;
+   transition: transform 0.3s ease-in-out;
 
    position: absolute;
-   top: 25vh;
-   transition: transform 0.3s ease-in-out;
+   top: 40%;
 }
 
 .left {
-   left: 8vw;
+   left: 1vw;
 }
 
 .right {
-   right: 8vw;
+   right: 1vw;
 }
 
 .spotlight-button:hover,

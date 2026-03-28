@@ -5,7 +5,7 @@
    text-decoration: none;
    padding: 2vw 1.5vw;
    color: var(--white);
-   font-size: clamp(1rem, 4.5vw, 1.6rem);
+   font-size: clamp(1rem, 4vw, 1.3rem);
    background-color: var(--blue);
    border-radius: 1vw;
 
@@ -15,4 +15,10 @@
 .link:hover,
 .link:focus-visible {
    background-color: var(--dark-blue);
+}
+
+@media (min-width: 1400px) {
+   .link {
+      padding: 1vw 0.5vw;
+   }
 }

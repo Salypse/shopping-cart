@@ -38,6 +38,7 @@
    padding: 2vw;
    width: 85%;
 
+   font-size: clamp(1rem, 4vw, 1.35rem);
    font-weight: bold;
    text-align: center;
    border-top: 0.7vh solid var(--white);

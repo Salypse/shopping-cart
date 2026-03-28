@@ -1,8 +1,4 @@
-import {
-   increaseIndex,
-   decreaseIndex,
-   getRandomProducts,
-} from "../helper/productSpotlight";
+import { increaseIndex, getRandomProducts } from "../helper/productSpotlight";
 import { useEffect, useState } from "react";
 import { SpotlightCard } from "./SpotlightCard";
 import styles from "../styles/productSpotlight.module.css";
@@ -32,31 +28,13 @@ export function ProductSpotlight(props) {
       <section className={styles["product-spotlight"]}>
          <h2>FEATURED</h2>
          <div>
-            <button
-               onClick={() =>
-                  setCurrentIndex((prevIndex) =>
-                     decreaseIndex(prevIndex, spotlightProducts.length),
-                  )
-               }
-               className={`${styles["spotlight-button"]} ${styles["left"]}`}
-            >
-               {"<"}
-            </button>
-
             {spotlightProducts.length && (
-               <SpotlightCard data={spotlightProducts[currentIndex]} />
+               <SpotlightCard
+                  data={spotlightProducts[currentIndex]}
+                  setCurrentIndex={setCurrentIndex}
+                  spotlightProducts={spotlightProducts}
+               />
             )}
-
-            <button
-               onClick={() =>
-                  setCurrentIndex((prevIndex) =>
-                     increaseIndex(prevIndex, spotlightProducts.length),
-                  )
-               }
-               className={`${styles["spotlight-button"]} ${styles["right"]}`}
-            >
-               {">"}
-            </button>
          </div>
       </section>
    );

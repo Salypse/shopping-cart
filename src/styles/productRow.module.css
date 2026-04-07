@@ -33,6 +33,7 @@ li:not(:last-child) .product-row {
 .product-wrapper {
    display: flex;
    flex-direction: column;
+   justify-content: center;
    padding: 1vw;
    gap: 1vh;
 }
@@ -49,7 +50,7 @@ li:not(:last-child) .product-row {
 }
 
 .product-quantity > button {
-   font-size: clamp(1rem, 3vw, 1.8rem);
+   font-size: clamp(1rem, 3vw, 1.4rem);
    color: var(--white);
    border: 0.7vw solid var(--dark-blue);
    border-radius: 2vw;
@@ -76,4 +77,27 @@ li:not(:last-child) .product-row {
    outline: none;
    transform: scale(1.2);
    color: var(--dark-blue);
+}
+
+@media (min-width: 600px) {
+   .product-quantity > button {
+      padding: 0.5vw 0.7vw;
+      border-width: 0.4vw;
+   }
+
+   .img-wrapper {
+      width: 15vw;
+      height: 15vw;
+   }
+}
+
+@media (min-width: 1000px) {
+   .product-quantity > button {
+      padding: 0.3vw 0.5vw;
+   }
+
+   .img-wrapper {
+      width: 12vw;
+      height: 12vw;
+   }
 }

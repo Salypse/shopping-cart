@@ -1,0 +1,18 @@
+.cart-page {
+   display: flex;
+   flex-direction: column;
+   min-height: calc(100vh - var(--nav-height));
+}
+
+.cart-products {
+   width: 100vw;
+}
+
+@media (min-width: 1000px) {
+   .cart-products {
+      width: 75vw;
+   }
+   .cart-page {
+      flex-direction: row;
+   }
+}

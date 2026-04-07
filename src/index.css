@@ -10,12 +10,12 @@
    --light-blue: #778da9;
    --white: #ededeb;
    --black: #232032;
+
+   --nav-height: 6vh;
 }
 
 #root {
    min-height: 100vh;
-   max-width: 100vw;
-
    background-color: var(--white);
 }
 

@@ -4,7 +4,9 @@ import { NavBar } from "./NavBar";
 
 export function App() {
    const [productData, setProductData] = useState([]);
-   const [cartData, setCartData] = useState([]);
+   const [cartData, setCartData] = useState(
+      JSON.parse(localStorage.getItem("userData")) || [],
+   );
    const [error, setError] = useState(undefined);
    const [loading, setLoading] = useState(true);
 

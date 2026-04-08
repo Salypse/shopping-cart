@@ -14,6 +14,7 @@ export function addToCart(event, data, cartData, setCartData) {
          return product;
       });
       setCartData(updatedCartData);
+      localStorage.setItem("userData", JSON.stringify(updatedCartData));
    }
    //If item is not in cart data make a new object for it
    else {
@@ -26,5 +27,9 @@ export function addToCart(event, data, cartData, setCartData) {
       };
 
       setCartData([...cartData, newCartData]);
+      localStorage.setItem(
+         "userData",
+         JSON.stringify([...cartData, newCartData]),
+      );
    }
 }

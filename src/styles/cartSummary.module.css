@@ -50,7 +50,7 @@
 @media (min-width: 1000px) {
    .cart-summary {
       background-color: #ffffff;
-      width: 25vw;
+      width: 20vw;
       display: flex;
       flex-direction: column;
       align-items: center;

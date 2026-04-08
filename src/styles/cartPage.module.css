@@ -10,7 +10,7 @@
 
 @media (min-width: 1000px) {
    .cart-products {
-      width: 75vw;
+      width: 80vw;
    }
    .cart-page {
       flex-direction: row;

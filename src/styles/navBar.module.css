@@ -44,3 +44,19 @@ nav strong {
    display: flex;
    align-self: center;
 }
+
+@media (min-width: 600px) {
+   .cart-icon {
+      width: 4vw;
+   }
+}
+
+@media (min-width: 1200px) {
+   .cart-icon {
+      width: 3vw;
+   }
+
+   .cart-nav {
+      gap: 0.5vw;
+   }
+}

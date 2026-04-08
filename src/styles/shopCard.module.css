@@ -1,12 +1,17 @@
 .shop-card {
    background-color: white;
-   width: 75%;
+   width: 90%;
+   height: 100%;
    padding: 1vw;
    text-align: center;
 }
 
 .info {
    padding-bottom: 1.5vh;
+}
+
+.info strong {
+   font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
 .shop-image {
@@ -45,7 +50,7 @@
 .quantity input {
    width: 20%;
    text-align: center;
-   font-size: clamp(1.2rem, 5vw, 2rem);
+   font-size: clamp(1.2rem, 5vw, 1.8rem);
    border-color: var(--dark-blue);
    border-radius: 2vw;
    border-style: solid;
@@ -63,7 +68,7 @@
    border-color: var(--dark-blue);
    border-style: solid;
    border-radius: 2vw;
-   font-size: clamp(1.2rem, 5vw, 2rem);
+   font-size: clamp(1.2rem, 5vw, 1.6rem);
    color: var(--white);
 }
 
@@ -85,4 +90,21 @@
 .quantity-btn:focus-visible {
    color: var(--light-blue);
    transform: scale(1.2);
+}
+
+@media (min-width: 800px) {
+   .cart-options {
+      padding: 1.5vw;
+      gap: 1vw;
+   }
+
+   .quantity input {
+      width: 35%;
+   }
+}
+
+@media (min-width: 1200px) {
+   .btn {
+      padding: 0.5vw 0.8vw;
+   }
 }

@@ -12,7 +12,7 @@ export function Shop() {
    const [isActive, setIsActive] = useState(false);
 
    useEffect(() => {
-      if (isActive) {
+      if (isActive && window.innerWidth >= 1000) {
          document.body.style.overflow = "hidden";
       }
 
@@ -22,7 +22,7 @@ export function Shop() {
    }, [isActive]);
 
    return (
-      <>
+      <div className={styles["shop"]}>
          <aside>
             <Filter
                productData={productData}
@@ -41,7 +41,7 @@ export function Shop() {
                   <img src={filterIcon} />
                </button>
             )}
-            <ul className={styles.shop}>
+            <ul className={styles["shop-products"]}>
                {filteredItems.map((product) => (
                   <li key={product.id} className={styles["shop-product"]}>
                      <ShopCard
@@ -53,6 +53,6 @@ export function Shop() {
                ))}
             </ul>
          </section>
-      </>
+      </div>
    );
 }

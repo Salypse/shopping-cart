@@ -58,7 +58,7 @@
 @media (min-width: 600px) {
    .spotlight-product {
       width: 60vw;
-      height: 40vh;
+      height: 60vh;
    }
 
    .spotlight-image {
@@ -78,6 +78,5 @@
 @media (min-width: 1600px) {
    .spotlight-product {
       width: 35vw;
-      height: 50vh;
    }
 }
